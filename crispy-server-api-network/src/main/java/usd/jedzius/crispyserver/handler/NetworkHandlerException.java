@@ -1,4 +1,4 @@
-package usd.jedzius.crispyserver;
+package usd.jedzius.crispyserver.handler;
 
 public class NetworkHandlerException extends Exception {
     private String message;

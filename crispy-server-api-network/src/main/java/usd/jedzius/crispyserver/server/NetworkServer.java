@@ -1,4 +1,4 @@
-package usd.jedzius.crispyserver;
+package usd.jedzius.crispyserver.server;
 
 public interface NetworkServer {
     void connect();
