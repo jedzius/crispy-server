@@ -7,9 +7,9 @@ import usd.jedzius.crispyserver.protocol.packet.ProtocolPacket;
 
 public abstract class ProtocolPacketHandler<T extends ProtocolPacket> extends NetworkHandler<ProtocolPacket> implements Listener {
 
-    private final ProtocolPacket packet;
+    private final Class<?> packet;
 
-    protected ProtocolPacketHandler(ProtocolPacket packet) {
+    protected ProtocolPacketHandler(Class<?> packet) {
         this.packet = packet;
     }
 
@@ -22,10 +22,10 @@ public abstract class ProtocolPacketHandler<T extends ProtocolPacket> extends Ne
 
     @Override
     public void received(Connection connection, Object object) {
-        if(!packet.getClass().isAssignableFrom(this.packet.getClass())) return;
+        if(!object.getClass().isAssignableFrom(this.packet)) return;
 
-        this.execute(packet);
+        this.execute((T) object);
     }
 
-    public abstract void execute(ProtocolPacket packet);
+    public abstract void execute(T packet);
 }

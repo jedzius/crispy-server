@@ -37,6 +37,7 @@ public class ProtocolServer implements NetworkServer, NetworkHandlerExtension {
     @Override
     public <T> void bindHandlerClass(Class<?> clazz) {
         this.handlerClass = clazz;
+        System.out.println("[INFO] Bound " + clazz.getSimpleName() + "as default handler class.");
     }
 
     @Override
@@ -46,6 +47,7 @@ public class ProtocolServer implements NetworkServer, NetworkHandlerExtension {
         }
 
         this.kryoServer.addListener((Listener) handler);
+        System.out.println("[INFO] Registered new handler " + handler.getClass().getSimpleName());
         return this;
     }
 
