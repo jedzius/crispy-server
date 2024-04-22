@@ -1,0 +1,2 @@
+Dzień dobry, jest to nastepca projektu crispychannels tylko bardziej rozbudowany. Planuje tutaj dodac system multiproxy, kanaly, sektory i ogolnie tego co raczej za darmo sie nie znajdzie. Projekt kodowany z nudow (w niektorych plikach widac moje fantazje xd). Zostaje przy podobnych technologiach czyli
+Kryonet, lecz bez protobufa bo po co? Cele projektu to edukacja osob, ktore by takich rzeczy nie napisali raczej, by mogli sobie podejrzec kod itp. Zapraszam do wspolnego pisania kodu PR, Issues mile widziane. Pozdrawiam
