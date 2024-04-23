@@ -1,6 +1,7 @@
 package usd.jedzius.crispyserver;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import usd.jedzius.crispyserver.client.NetworkClient;
 import usd.jedzius.crispyserver.protocol.client.ProtocolClient;
 import usd.jedzius.crispyserver.shared.server.ServerBindPacket;
 import usd.jedzius.crispyserver.shared.server.ServerUnBindPacket;
@@ -9,7 +10,7 @@ import java.io.IOException;
 
 public class SpigotPlugin extends JavaPlugin {
 
-    private ProtocolClient protocolClient;
+    private NetworkClient protocolClient;
 
     @Override
     public void onEnable() {

@@ -9,10 +9,19 @@ import java.util.List;
 public class MasterPlatformProxy extends PlatformProxy {
 
     private final List<MasterPlatformUser> connectedPlayers;
+    private boolean enabled;
 
     public MasterPlatformProxy(String proxyName) {
         super(proxyName);
         this.connectedPlayers = new ArrayList<>();
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
     }
 
     public void add(final MasterPlatformUser user) {

@@ -12,6 +12,10 @@ public class AbstractService<V, T> {
         System.out.println("[INFO] Found server and loaded it into cache!");
     }
 
+    public void flush(V v) {
+        this.objectMap.remove(v);
+    }
+
     public Optional<T> search(V value) {
         return Optional.ofNullable(this.objectMap.get(value));
     }

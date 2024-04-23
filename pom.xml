@@ -15,6 +15,7 @@
         <module>crispy-server-master-app</module>
         <module>crispy-server-shared</module>
         <module>crispy-server-spigot</module>
+        <module>crispy-server-proxy</module>
     </modules>
 
     <properties>
