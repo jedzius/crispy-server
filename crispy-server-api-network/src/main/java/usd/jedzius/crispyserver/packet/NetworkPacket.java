@@ -1,6 +1,8 @@
 package usd.jedzius.crispyserver.packet;
 
-public abstract class NetworkPacket {
+import java.io.Serializable;
+
+public abstract class NetworkPacket implements Serializable {
     private final long id;
 
     protected NetworkPacket(long id) {

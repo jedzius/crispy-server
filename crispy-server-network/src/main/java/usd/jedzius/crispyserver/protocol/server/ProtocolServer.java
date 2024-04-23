@@ -37,7 +37,7 @@ public class ProtocolServer implements NetworkServer, NetworkHandlerExtension {
     @Override
     public <T> void bindHandlerClass(Class<?> clazz) {
         this.handlerClass = clazz;
-        System.out.println("[INFO] Bound " + clazz.getSimpleName() + "as default handler class.");
+        System.out.println("[INFO] Bound " + clazz.getSimpleName() + " as default handler class.");
     }
 
     @Override

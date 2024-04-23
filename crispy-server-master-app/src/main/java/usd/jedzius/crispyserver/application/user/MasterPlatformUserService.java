@@ -4,5 +4,5 @@ import usd.jedzius.crispyserver.service.AbstractService;
 
 import java.util.UUID;
 
-public class MasterUserService extends AbstractService<UUID, MasterPlatformUser> {
+public class MasterPlatformUserService extends AbstractService<UUID, MasterPlatformUser> {
 }
