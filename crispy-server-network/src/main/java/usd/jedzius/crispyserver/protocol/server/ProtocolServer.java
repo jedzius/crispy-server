@@ -1,9 +1,7 @@
 package usd.jedzius.crispyserver.protocol.server;
 
-import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
-import usd.jedzius.crispyserver.handler.NetworkHandler;
 import usd.jedzius.crispyserver.handler.NetworkHandlerException;
 import usd.jedzius.crispyserver.handler.NetworkHandlerExtension;
 import usd.jedzius.crispyserver.server.NetworkServer;
@@ -41,14 +39,13 @@ public class ProtocolServer implements NetworkServer, NetworkHandlerExtension {
     }
 
     @Override
-    public <T> NetworkServer bindHandler(T handler) throws NetworkHandlerException {
+    public <T> void bindHandler(T handler) throws NetworkHandlerException {
         if(!this.handlerClass.isAssignableFrom(handler.getClass())) {
-            throw new NetworkHandlerException("Cannot bind this handler because binded is other handler class!", handler.getClass());
+            throw new NetworkHandlerException("Cannot bind this handler because bound is other handler class!", handler.getClass());
         }
 
         this.kryoServer.addListener((Listener) handler);
         System.out.println("[INFO] Registered new handler " + handler.getClass().getSimpleName());
-        return this;
     }
 
     public int getTcp() {

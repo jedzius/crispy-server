@@ -9,7 +9,6 @@ public class AbstractService<V, T> {
 
     public void put(V value, T type) {
         this.objectMap.put(value, type);
-        System.out.println("[INFO] Found server and loaded it into cache!");
     }
 
     public void flush(V v) {
