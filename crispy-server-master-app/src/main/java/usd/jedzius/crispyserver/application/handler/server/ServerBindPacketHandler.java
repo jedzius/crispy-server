@@ -1,5 +1,6 @@
 package usd.jedzius.crispyserver.application.handler.server;
 
+import com.esotericsoftware.kryonet.Connection;
 import usd.jedzius.crispyserver.application.server.MasterPlatformServerService;
 import usd.jedzius.crispyserver.protocol.packet.handler.ProtocolPacketHandler;
 import usd.jedzius.crispyserver.shared.server.ServerBindPacket;
@@ -14,7 +15,7 @@ public class ServerBindPacketHandler extends ProtocolPacketHandler<ServerBindPac
     }
 
     @Override
-    public void execute(ServerBindPacket packet) {
+    public void execute(ServerBindPacket packet, Connection connection) {
         this.serverService.search(packet.getServerName()).ifPresent(platformServer -> {
             platformServer.setEnabled(true);
             System.out.println("[INFO] Found server (" + packet.getServerName() + ") and marked it as enabled!");

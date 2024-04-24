@@ -10,9 +10,11 @@ public class UserCreatePacket extends ProtocolPacket implements Callback {
     private final UUID uniqueId;
     private final String nickname;
 
-    public UserCreatePacket(UUID uniqueId, String nickname) {
+    private final String proxyName;
+    public UserCreatePacket(UUID uniqueId, String nickname, String proxyName) {
         this.uniqueId = uniqueId;
         this.nickname = nickname;
+        this.proxyName = proxyName;
     }
 
     public UUID getUniqueId() {
@@ -21,6 +23,10 @@ public class UserCreatePacket extends ProtocolPacket implements Callback {
 
     public String getNickname() {
         return nickname;
+    }
+
+    public String getProxyName() {
+        return proxyName;
     }
 
     @Override

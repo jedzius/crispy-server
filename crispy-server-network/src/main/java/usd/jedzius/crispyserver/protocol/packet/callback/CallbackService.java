@@ -24,6 +24,6 @@ public class CallbackService {
     }
 
     public Optional<Consumer<Object>> search(long id) {
-        return Optional.ofNullable(this.callBacks.asMap().get(id));
+        return Optional.ofNullable(this.callBacks.getIfPresent(id));
     }
 }

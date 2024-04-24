@@ -26,8 +26,6 @@ public class ProxyPlugin {
 
         this.protocolClient = new ProtocolClient(10000, 10001);
         this.protocolClient.start();
-
-
     }
 
     @Subscribe

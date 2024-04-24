@@ -2,3 +2,6 @@ main: usd.jedzius.crispyserver.SpigotPlugin
 name: crispy-server-spigot
 version: 1.0.0
 author: jedzius
+
+commands:
+  proxy:

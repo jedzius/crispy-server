@@ -1,5 +1,6 @@
 package usd.jedzius.crispyserver.application.handler.server;
 
+import com.esotericsoftware.kryonet.Connection;
 import usd.jedzius.crispyserver.application.server.MasterPlatformServerService;
 import usd.jedzius.crispyserver.protocol.packet.handler.ProtocolPacketHandler;
 import usd.jedzius.crispyserver.shared.server.ServerUnBindPacket;
@@ -14,7 +15,7 @@ public class ServerUnBindPacketHandler extends ProtocolPacketHandler<ServerUnBin
     }
 
     @Override
-    public void execute(ServerUnBindPacket packet) {
+    public void execute(ServerUnBindPacket packet, Connection connection) {
         this.masterPlatformServerService.search(packet.getServerName()).ifPresent(masterPlatformServer -> {
             masterPlatformServer.setEnabled(false);
             System.out.println("[INFO] Found server (" + packet.getServerName() + ") and marked it as disabled!");

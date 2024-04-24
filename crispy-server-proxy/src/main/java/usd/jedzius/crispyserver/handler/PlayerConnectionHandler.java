@@ -19,7 +19,7 @@ public class PlayerConnectionHandler {
     @Subscribe
     public void onJoin(PostLoginEvent event) {
         final Player player = event.getPlayer();
-        this.proxyPlugin.getProtocolClient().send(new UserCreatePacket(player.getUniqueId(), player.getUsername()));
+        this.proxyPlugin.getProtocolClient().send(new UserCreatePacket(player.getUniqueId(), player.getUsername(), "PROXY_1"));
     }
 
     @Subscribe
