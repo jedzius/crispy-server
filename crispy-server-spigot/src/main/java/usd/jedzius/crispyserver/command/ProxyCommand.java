@@ -5,7 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import usd.jedzius.crispyserver.SpigotPlugin;
-import usd.jedzius.crispyserver.shared.user.UserProxyInfoPacket;
+import usd.jedzius.crispyserver.shared.user.UserProxyCommandPacket;
 
 public class ProxyCommand implements CommandExecutor {
 
@@ -18,7 +18,7 @@ public class ProxyCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(commandSender instanceof Player player) {
-            this.plugin.getProtocolClient().send(new UserProxyInfoPacket(player.getUniqueId()));
+            this.plugin.getProtocolClient().send(new UserProxyCommandPacket(player.getUniqueId()));
         }
         return false;
     }

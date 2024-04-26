@@ -6,7 +6,7 @@ import usd.jedzius.crispyserver.application.handler.server.ServerBindPacketHandl
 import usd.jedzius.crispyserver.application.handler.server.ServerUnBindPacketHandler;
 import usd.jedzius.crispyserver.application.handler.user.UserCreatePacketHandler;
 import usd.jedzius.crispyserver.application.handler.user.UserFlushPacketHandler;
-import usd.jedzius.crispyserver.application.handler.user.UserProxyInfoPacketHandler;
+import usd.jedzius.crispyserver.application.handler.user.UserProxyCommandPacketHandler;
 import usd.jedzius.crispyserver.application.proxy.MasterPlatformProxy;
 import usd.jedzius.crispyserver.application.proxy.MasterPlatformProxyService;
 import usd.jedzius.crispyserver.application.server.MasterPlatformServer;
@@ -48,6 +48,6 @@ public class ApplicationController {
         networkServer.bindHandler(new ProxyBindPacketHandler(this.masterPlatformProxyService));
         networkServer.bindHandler(new ProxyUnBindPacketHandler(this.masterPlatformProxyService));
 
-        networkServer.bindHandler(new UserProxyInfoPacketHandler(this.masterPlatformUserService));
+        networkServer.bindHandler(new UserProxyCommandPacketHandler(this.masterPlatformUserService));
     }
 }
